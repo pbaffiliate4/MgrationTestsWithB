@@ -1,0 +1,14 @@
+ var loginUrl = require("ihealth/oauth2/loginUrl");
+var u = request.parameters.username;
+if (!username) {
+  
+   return {
+
+      "status": "failure",
+      "errorCode": "Parameter_Required",
+      "errorDetail": "You need to send the mandatory 'u' parameter with a value."
+    };
+}
+
+var url = loginUrl.getUrl(u);
+apsdb.httpRedirect(url);
